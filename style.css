@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+uL {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.navbar {
+  height: 4.5rem;
+  width: 100%;
+  background: black;
+  color: white;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+header {
+  padding: 1rem;
+  background-color: red;
+  margin-bottom: 1rem;
+  padding-bottom: 3.5rem;
+  text-align: center;
+  clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0% 77%, 0% 0%);
+}
