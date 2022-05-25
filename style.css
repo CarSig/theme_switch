@@ -1,7 +1,10 @@
-* {
+body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 uL {
@@ -18,8 +21,8 @@ a {
 .navbar {
   height: 4.5rem;
   width: 100%;
-  background: black;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .navbar-nav {
@@ -31,7 +34,7 @@ a {
 
 header {
   padding: 1rem;
-  background-color: red;
+  background: var(--bg-nav);
   margin-bottom: 1rem;
   padding-bottom: 3.5rem;
   text-align: center;
@@ -43,8 +46,8 @@ header {
   width: 32rem;
   opacity: 0;
   z-index: 2;
-  background: blue;
-  border-top: 2px solid white;
+  background: var(--bg-dropdown);
+  border-top: 2px solid var(--border-color);
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   display: flex;
@@ -73,11 +76,55 @@ header {
 
 .dropdown-item a::before {
   content: " ";
-  border: 2px solid white;
+  border: 2px solid var(--border-color);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
+}
+
+.dropdown-item a::before #light {
+  background: red;
+}
+
+/* ---------Themes---------*/
+
+:root {
+  --gray0: #eceff1;
+  --gray1: #cfd8dc;
+  --gray2: #b0bec5;
+  --gray3: #78909c;
+  --gray4: #607d8b;
+  --gray5: #455a64;
+  --gray6: #263238;
+  --blue: #1565c0;
+  --purple: #7b1fa2;
+  --yellow: #ffeb3b;
+}
+.light {
+  --bg: var(--gray0);
+  --bg-nav: linear-gradient(to right, var(--gray1), var(--gray3));
+  --bg-dropdown: var(--gray0);
+  --text: var(--gray6);
+  --border-color: var(--blue);
+  --bg-solar: var(var(--yellow));
+}
+.dark {
+  --bg: var(--gray5);
+  --bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
+  --bg-dropdown: var(--gray6);
+  --text: var(--gray0);
+  --border-color: var(--purple);
+  --bg-solar: var(var(--blue));
+}
+.solar {
+  --gray0: #fbffd4;
+  --gray1: #f7f8d0;
+  --gray2: #b6f880;
+  --gray3: #5ec72d;
+  --gray4: #3ea565;
+  --gray5: #005368;
+  --gray6: #003d4c;
 }
