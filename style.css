@@ -1,13 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--text);
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
-uL {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -17,11 +17,10 @@ a {
   color: currentColor;
   text-decoration: none;
 }
-
 .navbar {
   height: 4.5rem;
   width: 100%;
-  background: var(--bg);
+  background: var(--bg-nav);
   color: var(--text);
 }
 
@@ -32,6 +31,10 @@ a {
   height: 100%;
 }
 
+main {
+  min-height: 100vh;
+  padding: 2rem;
+}
 header {
   padding: 1rem;
   background: var(--bg-nav);
@@ -43,7 +46,8 @@ header {
 
 .dropdown {
   position: absolute;
-  width: 32rem;
+  min-width: 420px;
+
   opacity: 0;
   z-index: 2;
   background: var(--bg-dropdown);
@@ -57,11 +61,11 @@ header {
   margin-top: 2rem;
   padding: 0.5rem;
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175rem 0.5rem;
-  transform: translateX(-40%);
+  transform: translate(-40%, -35%);
   transition: opacity 0.15s ease-out;
 }
 
-.has-dropdown:focus-within .dropdown {
+.has-dropdown:hover .dropdown {
   opacity: 1;
   pointer-events: auto;
 }
@@ -83,10 +87,7 @@ header {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
-}
-
-.dropdown-item a::before #light {
-  background: red;
+  color: red;
 }
 
 /* ---------Themes---------*/
@@ -105,19 +106,21 @@ header {
 }
 .light {
   --bg: var(--gray0);
-  --bg-nav: linear-gradient(to right, var(--gray1), var(--gray3));
+  --bg-nav: linear-gradient(to right, var(--gray1), var(--gray4));
   --bg-dropdown: var(--gray0);
   --text: var(--gray6);
   --border-color: var(--blue);
-  --bg-solar: var(var(--yellow));
+  --bg-solar: var(--yellow);
+  --imgBrightness: brightness(0.8);
 }
 .dark {
   --bg: var(--gray5);
-  --bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
+  --bg-nav: linear-gradient(to right, var(--gray4), var(--gray6));
   --bg-dropdown: var(--gray6);
   --text: var(--gray0);
   --border-color: var(--purple);
-  --bg-solar: var(var(--blue));
+  --bg-solar: var(--blue);
+  --imgBrightness: brightness(1.2);
 }
 .solar {
   --gray0: #fbffd4;
@@ -127,4 +130,37 @@ header {
   --gray4: #3ea565;
   --gray5: #005368;
   --gray6: #003d4c;
+}
+
+#dark::before {
+  background: #2a2e35;
+}
+
+#light::before {
+  background: #ffffff;
+}
+
+#solar::before {
+  background: var(--bg-solar);
+}
+
+/* ---------Logo Animation---------*/
+@keyframes color-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.logo {
+  min-width: 180px;
+  max-width: 17%;
+  padding: 2rem;
+}
+.logo:hover {
+  animation: color-rotate 4s ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
