@@ -1,10 +1,16 @@
 body {
   margin: 0;
   padding: 0;
+  border: 0;
+  outline: 0;
   font-family: "Montserrat", sans-serif;
   color: var(--text);
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  box-sizing: border-box;
+  line-height: 1.7;
+
+  line-height: 1.7;
 }
 
 ul {
@@ -42,6 +48,10 @@ header {
   padding-bottom: 3.5rem;
   text-align: center;
   clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0% 77%, 0% 0%);
+}
+.container {
+  width: 75%;
+  margin: 0 auto;
 }
 
 .dropdown {
@@ -111,7 +121,6 @@ header {
   --text: var(--gray6);
   --border-color: var(--blue);
   --bg-solar: var(--yellow);
-  --imgBrightness: brightness(0.8);
 }
 .dark {
   --bg: var(--gray5);
@@ -120,7 +129,6 @@ header {
   --text: var(--gray0);
   --border-color: var(--purple);
   --bg-solar: var(--blue);
-  --imgBrightness: brightness(1.2);
 }
 .solar {
   --gray0: #fbffd4;
